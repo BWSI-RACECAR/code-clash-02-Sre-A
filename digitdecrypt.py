@@ -29,23 +29,15 @@ Input: 0 Output: 0
 
 class Solution:    
     def digitdecrypt(self, num):
-        if num<0:
-            raise ValueError(“Invalid argument. Please enter a positive integer.”)
-        while num>9:
-            dig_list-[int(i) for i in str(num)]
-            num=0
-	for i in dig_list:
-		num=num+i
-        return num
-
-            #TODO: Write code below to returnn an int with the solution to the prompt.
-            pass
+        #type num: int
+        #return type: int
+        
+        #TODO: Write code below to returnn an int with the solution to the prompt.
+        return self.digitdecrypt(sum([int(i) for i in str(num)])) if len(str(sum([int(i) for i in str(num)]))) > 1 else sum([int(i) for i in str(num)])
  
 def main():
     input1= input()
     input2 = int(input1)
-
-    
     tc1 = Solution()
     ans = tc1.digitdecrypt(input2)
     print(ans)
