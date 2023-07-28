@@ -29,12 +29,8 @@ Input: 0 Output: 0
 
 class Solution:    
     def digitdecrypt(self, num):
-      if num == 0:
-        return 0
-      if num%9 != 0:
-        return num%9
-      return 9
-      pass
+        return (self.digitdecrypt(sum([int(i) for i in str(num)])) if num > 10 else num)
+            #TODO: Write code below to returnn an int with the solution to the prompt.
  
 def main():
     input1= input()
