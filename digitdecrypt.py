@@ -29,15 +29,18 @@ Input: 0 Output: 0
 
 class Solution:    
     def digitdecrypt(self, num):
-        #type num: int
-        #return type: int
-        
-        #TODO: Write code below to returnn an int with the solution to the prompt.
-        return self.digitdecrypt(sum([int(i) for i in str(num)])) if len(str(sum([int(i) for i in str(num)]))) > 1 else sum([int(i) for i in str(num)])
+      if num == 0:
+        return 0
+      if num%9 != 0:
+        return num%9
+      return 9
+      pass
  
 def main():
     input1= input()
     input2 = int(input1)
+
+    
     tc1 = Solution()
     ans = tc1.digitdecrypt(input2)
     print(ans)
